@@ -4,10 +4,10 @@
 
 ---
 
-- A number of 20 robotic arms being trained to follow a specific trace shown by the ball rotating around the arm.
-- **states**: The state space is comprised of 33 dimensions.
-- **action_space**: Four action spaces which the agent might decide.
-- **goal**: The environment is considered solved if agent gets an average score of +30 over 100 consecutive episodes
+- Two agents (players) playing a game similar to tennis in which the aim is to keep the ball as much as possible without falling into the table.
+- **states**: The state space is comprised of 24 dimensions.
+- **action_space**: 2 actions which the agent might decide in a continuous space.
+- **goal**: The environment is considered solved if agents could keep the ball as much as possible without hitting the table. Target score is +0.5 over 100 consecutive episodes. Note that one hit over the net rewards +0.1
 
 ### Reinforcement Learning Algorithm
 
@@ -31,7 +31,7 @@
 - Clone this repo
 
 ```bash
-git clone https://github.com/beber89/deepRL-udaproj2-continuous-control
+git clone https://github.com/beber89/DeepRL-udaproj3-collaboration-and-competition
 ```
 
 - Install python dependencies pytorch, matplotlib & unityagents
@@ -41,10 +41,10 @@ pip install torch matplotlib unityagents
 ```
 
 - Download the unity environment
-  - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Linux.zip)
-  - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher.app.zip)
-  - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86.zip)
-  - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P2/Reacher/Reacher_Windows_x86_64.zip)
+  - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
+  - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
+  - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
+  - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
 
 ## Instructions
 
@@ -52,9 +52,9 @@ pip install torch matplotlib unityagents
 
 ### Training
 
-- Open `Continuous_Control.ipynb`
+- Open `Tennis.ipynb`
 
-- Navigate the notebook until you reach the `3. Watch the agent play` section and click on that cell
+- Navigate the notebook until you reach the `3. Watch agent` section and click on that cell
 
 - Click `Cell` in the menu bar then click `Run All Above`
 
@@ -62,18 +62,18 @@ pip install torch matplotlib unityagents
 
 ### Run Trained Agent
 
-- Open `Continuous_Control.ipynb`
+- Open `Tennis.ipynb`
 
 - Navigate the notebook until you reach the `1. Training` section and click on that cell
 
 - Click `Cell` in the menu bar then click `Run All Above`
 
-- Navigate the notebook until you reach the `3. Watch the agent play` section and click on that cell
+- Navigate the notebook until you reach the `3. Watch agent` section and click on that cell
 
 - Click `Cell` in the menu bar then click `Run All Below`
 
-- This loads the weights into the model from file `checkpoint.pth`
+- This loads the weights into the model from files `checkpoint_actor.pth` and `checkpoint_critic.pth`
 
 - A unity window pops up showing the agent playing the game
 
-![gameplay](game-record.gif)
+![gameplay](gameplay.gif)
